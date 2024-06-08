@@ -14,13 +14,13 @@ export type data = {
   type: string;
 };
 
-export const useLanguageStore = create<data & Actions>()((set) => ({
-  sort: "all",
+export const useFilterData = create<data & Actions>()((set) => ({
+  sort: "none",
   color: "",
   price: "",
-  type: "",
+  type: "T-Shirts",
   updateSortHandler: (newSortValue: string) => set({ sort: newSortValue }),
-  updateColorHandler: (newColorValue: string) => set({ sort: newColorValue }),
-  updatePriceHandler: (newPriceValue: string) => set({ sort: newPriceValue }),
-  updateTypeHandler: (newTypeValue: string) => set({ sort: newTypeValue }),
+  updateColorHandler: (newColorValue: string) => set({ color: newColorValue }),
+  updatePriceHandler: (newPriceValue: string) => set({ price: newPriceValue }),
+  updateTypeHandler: (newTypeValue: string) => set({ type: newTypeValue }),
 }));

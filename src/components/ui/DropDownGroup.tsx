@@ -2,7 +2,6 @@
 
 import * as React from "react";
 
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,9 +13,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { SORT_OPTION } from "@/constants/ListSidebar";
 import { ChevronDown } from "lucide-react";
+import { useFilterData } from "@/stores/FilterStore";
 
 export function DropdownMenuRadioGroupDemo() {
-  const [position, setPosition] = React.useState("bottom");
+  const { updateSortHandler , sort } = useFilterData();
 
   return (
     <DropdownMenu>
@@ -26,8 +26,13 @@ export function DropdownMenuRadioGroupDemo() {
           <ChevronDown className="w-5 h-5 text-gray-700 group-hover:text-gray-900" />
         </span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+      <DropdownMenuContent className="w-56" align="end">
+        <DropdownMenuRadioGroup
+          value={sort}
+          onValueChange={(value) => {
+            updateSortHandler(value);
+          }}
+        >
           {SORT_OPTION.map((item) => (
             <DropdownMenuRadioItem value={item.value}>
               {item.name}
