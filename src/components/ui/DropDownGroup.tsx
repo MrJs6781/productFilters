@@ -34,8 +34,8 @@ export function DropdownMenuRadioGroupDemo() {
           }}
         >
           {SORT_OPTION.map((item) => (
-            <DropdownMenuRadioItem value={item.value}>
-              {item.name}
+            <DropdownMenuRadioItem value={item}>
+              {item}
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>

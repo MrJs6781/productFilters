@@ -17,10 +17,10 @@ export function AccordionDemo() {
         <AccordionTrigger>Color</AccordionTrigger>
         <AccordionContent>
           <ul className="flex flex-col gap-4">
-            {COLOR_ITEMS.map((item) => (
-              <li key={item.id} className="flex items-center gap-2">
+            {COLOR_ITEMS.map((item , index) => (
+              <li key={index} className="flex items-center gap-2">
                 <Checkbox />
-                <p>{item.label}</p>
+                <p>{item}</p>
               </li>
             ))}
           </ul>
@@ -30,10 +30,10 @@ export function AccordionDemo() {
         <AccordionTrigger>Size</AccordionTrigger>
         <AccordionContent>
           <ul className="flex flex-col gap-4">
-            {SIZE_ITEMS.map((item) => (
-              <li key={item.id} className="flex items-center gap-2">
+            {SIZE_ITEMS.map((item , index) => (
+              <li key={index} className="flex items-center gap-2">
                 <Checkbox />
-                <p>{item.label}</p>
+                <p>{item}</p>
               </li>
             ))}
           </ul>

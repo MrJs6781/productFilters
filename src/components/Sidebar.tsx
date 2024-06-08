@@ -18,7 +18,7 @@ export default function Sidebar() {
 
   return (
     <section className="flex flex-col items-start gap-3 w-full">
-      <ul className="w-full flex flex-col items-start gap-2 border-b-2 border-gray-100 pb-4">
+      <ul className="w-full flex flex-col items-start justify-between md:justify-normal gap-2 md:border-b-2 border-gray-100 pb-4">
         {LIST_SIDEBAR.map((item) => (
           <li
             key={item.id}
